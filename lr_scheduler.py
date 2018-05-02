@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 lr_=tf.placeholder(tf.float32  , name = 'learning_rate')
 global_step = tf.placeholder(dtype =tf.float32)
 
-#learning_rate = tf.train.exponential_decay(0.01,global_step,decay_steps=1000,decay_rate=0.96,staircase=True)
-learning_rate = tf.train.inverse_time_decay(0.01,global_step,decay_steps=10000,decay_rate=0.96,staircase=True)
+learning_rate = tf.train.exponential_decay(0.01,global_step,decay_steps=100000,decay_rate=0.96,staircase=True)
+#learning_rate = tf.train.inverse_time_decay(0.01,global_step,decay_steps=10000,decay_rate=0.96,staircase=True)
 sess=tf.Session()
 sess.run(tf.global_variables_initializer())
 ys=[]
