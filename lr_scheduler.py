@@ -3,8 +3,13 @@ import matplotlib.pyplot as plt
 lr_=tf.placeholder(tf.float32  , name = 'learning_rate')
 global_step = tf.placeholder(dtype =tf.int32)
 
+
+# exponential_decay
 #learning_rate = tf.train.exponential_decay(0.01,global_step,decay_steps=100000,decay_rate=0.96,staircase=True)
+
+# inverse_time_decay
 #learning_rate = tf.train.inverse_time_decay(0.01,global_step,decay_steps=100000,decay_rate=0.96,staircase=False)
+
 boundaries = [10000,50000]
 values = [1.0 , 0.5 , 0.1]
 learning_rate = tf.train.piecewise_constant(global_step , boundaries , values)
